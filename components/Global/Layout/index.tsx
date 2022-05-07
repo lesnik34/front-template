@@ -1,28 +1,25 @@
-import React from "react";
+import React from 'react';
 
-import Footer from "@components/Global/Footer";
-import Header from "@components/Global/Header";
-import CustomHead from "@components/Global/CustomHead";
-import GoogleTagManager from "@components/Global/GoogleTagManager";
+import Footer from '@components/global/footer';
+import Header from '@components/global/header';
+import CustomHead from '@components/global/custom_head';
+import LanguageProvider from '@context/language';
 
 interface LayoutI {
-  children: JSX.Element;
+    children: JSX.Element | React.ReactNode;
+    language: string;
 }
 
-const Layout: React.FC<LayoutI> = ({ children }) => {
-  return (
-    <>
-      <CustomHead />
-      <Header />
+const Layout: React.FC<LayoutI> = ({ children, language }) => (
+    <LanguageProvider language={language}>
+        <CustomHead />
 
-      <main>
-        <GoogleTagManager />
-        {children}
-      </main>
+        <Header />
 
-      <Footer />
-    </>
-  );
-};
+        <main>{children}</main>
+
+        <Footer />
+    </LanguageProvider>
+);
 
 export default Layout;

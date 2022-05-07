@@ -1,16 +1,16 @@
-import React from "react";
-import { AppProps } from "next/dist/shared/lib/router/router";
+import React from 'react';
+import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
 
-import Layout from "@components/Global/Layout";
+import { store } from '@store/.';
+import '@styles/globals.scss';
 
-import "@styles/index.scss";
-
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
-};
+function MyApp({ Component, pageProps }: AppProps) {
+    return (
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
+    );
+}
 
 export default MyApp;

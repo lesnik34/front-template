@@ -1,17 +1,8 @@
 module.exports = {
   reactStrictMode: true,
-  webpack(config, options) {
-    config.module.rules.push({
-      loader: "@svgr/webpack",
-      options: {
-        prettier: false,
-        svgo: true,
-        svgoConfig: {
-          plugins: [{ removeViewBox: false }],
-        },
-        titleProp: true,
-      },
-      test: /\.svg$/,
-    });
+  env: require(`./config/${process.env.ENV_MODE}.json`),
+  i18n: {
+    locales: ["ru"],
+    defaultLocale: "ru",
   },
 };
