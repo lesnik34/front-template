@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import Footer from '@components/global/footer';
-import Header from '@components/global/header';
-import CustomHead from '@components/global/custom_head';
-import LanguageProvider from '@context/language';
+import Footer from "@components/global/footer";
+import Header from "@components/global/header";
+import CustomHead from "@components/global/custom_head";
+import LanguageProvider from "@context/language";
 
 interface LayoutI {
-    children: JSX.Element | React.ReactNode;
-    language: string;
+  children: JSX.Element | React.ReactNode;
+  language: string;
 }
 
 const Layout: React.FC<LayoutI> = ({ children, language }) => (
-    <LanguageProvider language={language}>
-        <CustomHead />
+  <LanguageProvider language={language}>
+    <CustomHead />
 
-        <Header />
+    <Header />
 
-        <main>{children}</main>
+    <main>{children}</main>
 
-        <Footer />
-    </LanguageProvider>
+    <Footer />
+  </LanguageProvider>
 );
 
 export default Layout;

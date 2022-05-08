@@ -1,12 +1,11 @@
 {
-  "name": "sber-prime-by",
+  "name": "front-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start:dev": "cross-env ENV_MODE=development next dev",
     "start:stubs": "npm-run-all --parallel stub start:dev",
-    "start:ift": "cross-env ENV_MODE=ift next start",
-    "start:prom": "cross-env ENV_MODE=prom next start",
+    "start:prod": "cross-env ENV_MODE=production next start",
     "stub": "node ./stub/index.js",
     "build": "next build"
   },
@@ -43,9 +42,10 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-next": "11.1.2",
+    "eslint-config-pedant": "^1.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.4",
-    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-jsx-a11y": "^6.4.1",
