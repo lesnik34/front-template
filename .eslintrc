@@ -35,7 +35,7 @@
       "typescript": {}
     }
   },
-  "ignorePatterns": ["craco.config.js"],
+  "ignorePatterns": ["next.config.js"],
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [
